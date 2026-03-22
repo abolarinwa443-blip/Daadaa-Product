@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daddaproducts — Digital Downloads, Pet Essentials & More</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --indigo:#1e1560;--indigo-lt:#2d2090;--indigo-pale:rgba(30,21,96,0.07);
+  --violet:#7c3aed;--violet-lt:#9f5bff;--violet-pale:rgba(124,58,237,0.1);
+  --gold:#f0a500;--gold-lt:#f8c030;--gold-pale:rgba(240,165,0,0.1);
+  --coral:#f05050;--coral-lt:#f87070;--coral-pale:rgba(240,80,80,0.1);
+  --teal:#0fa88a;--teal-pale:rgba(15,168,138,0.1);
+  --sky:#e8f4ff;--white:#f8f9ff;--white-pure:#ffffff;
+  --text:#1a1240;--mid:#5a5080;--light:#9890b8;
+  --border:rgba(30,21,96,0.1);--border-md:rgba(30,21,96,0.16);
+  --shadow:0 8px 48px rgba(30,21,96,0.14);--shadow-sm:0 2px 20px rgba(30,21,96,0.08);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'DM Sans',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden;}
+
+/* gradient mesh background */
+body::before{content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
+  background:radial-gradient(ellipse 50% 50% at 85% 10%,rgba(124,58,237,0.06) 0%,transparent 60%),
+  radial-gradient(ellipse 40% 40% at 10% 85%,rgba(240,165,0,0.05) 0%,transparent 60%);}
+
+/* ANNOUNCE */
+.announce{background:var(--indigo);padding:10px 20px;text-align:center;position:relative;z-index:10;}
+.announce-track{display:inline-flex;white-space:nowrap;animation:atick 20s linear infinite;}
+.at-item{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:600;
+  color:rgba(255,255,255,0.75);letter-spacing:0.5px;padding:0 28px;}
+.at-item strong{color:var(--gold-lt);}
+.at-sep{color:rgba(255,255,255,0.2);}
+@keyframes atick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* NAV */
+nav{position:sticky;top:0;z-index:100;background:rgba(248,249,255,0.97);backdrop-filter:blur(16px);
+  border-bottom:1px solid var(--border);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 56px;height:72px;box-shadow:0 2px 20px rgba(30,21,96,0.06);}
+.nav-logo{display:flex;flex-direction:column;line-height:1;}
+.nav-logo-main{font-family:'Syne',sans-serif;font-size:21px;font-weight:800;color:var(--indigo);}
+.nav-logo-main span{color:var(--violet);}
+.nav-logo-sub{font-family:'DM Sans',sans-serif;font-size:9.5px;font-weight:600;
+  letter-spacing:2.5px;text-transform:uppercase;color:var(--light);margin-top:3px;}
+.nav-links{display:flex;list-style:none;}
+.nav-links a{font-family:'Syne',sans-serif;font-size:13px;font-weight:600;
+  color:var(--mid);text-decoration:none;padding:0 14px;transition:color 0.2s;}
+.nav-links a:hover{color:var(--violet);}
+.nav-right{display:flex;align-items:center;gap:10px;}
+.nav-badge{background:var(--gold-pale);border:1px solid rgba(240,165,0,0.3);
+  border-radius:6px;padding:4px 11px;font-size:11px;font-weight:700;color:var(--gold);white-space:nowrap;}
+.nav-cta{background:var(--violet);color:white;border:none;border-radius:8px;
+  padding:9px 20px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;
+  cursor:pointer;transition:all 0.2s;}
+.nav-cta:hover{background:var(--violet-lt);transform:translateY(-1px);
+  box-shadow:0 4px 16px rgba(124,58,237,0.3);}
+.hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:4px;}
+.hamburger span{display:block;width:22px;height:2px;background:var(--indigo);border-radius:1px;}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;min-height:88vh;
+  background:linear-gradient(135deg,var(--indigo) 0%,#2a1a80 50%,#1a1060 100%);
+  display:grid;grid-template-columns:1.1fr 1fr;align-items:center;}
+/* star dots */
+.hero-stars{position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,0.6) 1px,transparent 1px);
+  background-size:40px 40px;opacity:0.08;}
+/* glow spots */
+.hero-glow1{position:absolute;right:5%;top:10%;width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(124,58,237,0.3),transparent 70%);pointer-events:none;}
+.hero-glow2{position:absolute;left:40%;bottom:0;width:300px;height:300px;border-radius:50%;
+  background:radial-gradient(circle,rgba(240,165,0,0.15),transparent 70%);pointer-events:none;}
+.hero-left{position:relative;z-index:1;padding:80px 56px;}
+.hero-eyebrow{display:flex;align-items:center;gap:12px;margin-bottom:22px;}
+.he-dot{width:8px;height:8px;border-radius:50%;background:var(--gold);
+  box-shadow:0 0 10px var(--gold);animation:pulse 2s ease-in-out infinite;}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.4;transform:scale(0.8)}}
+.he-text{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;
+  letter-spacing:3px;text-transform:uppercase;color:var(--gold-lt);}
+.hero-h1{font-family:'Syne',sans-serif;font-size:clamp(42px,5.5vw,76px);
+  font-weight:800;line-height:1.05;color:white;margin-bottom:16px;letter-spacing:-0.5px;}
+.hero-h1 .gold{color:var(--gold);}
+.hero-h1 .block{display:block;}
+.hero-sub{font-size:16px;font-weight:300;line-height:1.85;color:rgba(255,255,255,0.6);
+  max-width:440px;margin-bottom:32px;}
+/* category pill row */
+.hero-pills{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:32px;}
+.hero-pill{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);
+  border-radius:20px;padding:6px 14px;font-size:12px;font-weight:600;color:rgba(255,255,255,0.75);
+  cursor:pointer;transition:all 0.2s;}
+.hero-pill:hover{background:rgba(124,58,237,0.4);border-color:var(--violet-lt);}
+.hero-btns{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:44px;}
+.btn-gold{background:var(--gold);color:var(--indigo);border:none;border-radius:8px;
+  padding:14px 30px;font-family:'Syne',sans-serif;font-size:14px;font-weight:800;
+  cursor:pointer;transition:all 0.25s;display:flex;align-items:center;gap:8px;}
+.btn-gold:hover{background:var(--gold-lt);transform:translateY(-2px);
+  box-shadow:0 8px 24px rgba(240,165,0,0.4);}
+.btn-ghost-white{background:rgba(255,255,255,0.1);color:white;
+  border:1px solid rgba(255,255,255,0.25);border-radius:8px;
+  padding:13px 26px;font-family:'Syne',sans-serif;font-size:14px;font-weight:600;
+  cursor:pointer;transition:all 0.2s;}
+.btn-ghost-white:hover{border-color:var(--gold-lt);color:var(--gold-lt);}
+.hero-stats{display:flex;gap:0;border:1px solid rgba(255,255,255,0.12);}
+.hs{padding:16px 24px;border-right:1px solid rgba(255,255,255,0.1);}
+.hs:last-child{border-right:none;}
+.hs-val{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:var(--gold);line-height:1;}
+.hs-label{font-size:10px;font-weight:500;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-top:4px;}
+
+/* HERO RIGHT — product showcase grid */
+.hero-right{position:relative;z-index:1;padding:60px 56px 60px 10px;
+  display:grid;grid-template-columns:1fr 1fr;gap:10px;align-content:center;}
+.hero-prod{background:rgba(255,255,255,0.06);backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.1);border-radius:14px;
+  overflow:hidden;cursor:pointer;transition:all 0.3s;}
+.hero-prod:hover{border-color:rgba(124,58,237,0.5);background:rgba(255,255,255,0.1);
+  transform:translateY(-4px);}
+.hero-prod-img{aspect-ratio:1/1;overflow:hidden;}
+.hero-prod-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.85);transition:all 0.4s;}
+.hero-prod:hover .hero-prod-img img{transform:scale(1.05);filter:brightness(1);}
+.hero-prod-body{padding:10px 12px 12px;}
+.hpb-name{font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;
+  color:rgba(255,255,255,0.8);line-height:1.3;margin-bottom:4px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.hpb-price{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;color:var(--gold);}
+.hero-prod .dig-badge{position:absolute;top:10px;left:10px;z-index:2;
+  background:var(--violet);color:white;border-radius:5px;padding:2px 8px;
+  font-size:9px;font-weight:700;letter-spacing:0.5px;}
+
+/* MARQUEE */
+.marquee{background:var(--violet);padding:13px 0;overflow:hidden;white-space:nowrap;position:relative;z-index:1;}
+.marquee-track{display:inline-flex;animation:mar 22s linear infinite;}
+.mi{display:inline-flex;align-items:center;gap:14px;padding:0 20px;
+  font-family:'Syne',sans-serif;font-size:12px;font-weight:600;
+  letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);}
+.ms{color:var(--gold);font-size:10px;}
+@keyframes mar{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* TRUST */
+.trust{background:var(--white-pure);border-bottom:1px solid var(--border);padding:0 56px;position:relative;z-index:1;}
+.trust-inner{display:grid;grid-template-columns:repeat(4,1fr);}
+.ti{padding:20px 16px;display:flex;align-items:center;gap:12px;border-right:1px solid var(--border);}
+.ti:last-child{border-right:none;}
+.ti-icon{font-size:22px;flex-shrink:0;}
+.ti-title{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:700;color:var(--indigo);margin-bottom:2px;}
+.ti-desc{font-size:11px;color:var(--light);}
+
+/* CATEGORIES */
+.categories{padding:80px 56px;background:var(--white);position:relative;z-index:1;}
+.sec-hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:44px;}
+.sec-eyebrow{font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--violet);margin-bottom:10px;
+  display:flex;align-items:center;gap:10px;}
+.sec-eyebrow::after{content:'';flex:0 0 22px;height:2px;background:var(--violet);}
+.sec-title{font-family:'Syne',sans-serif;font-size:clamp(26px,3.2vw,42px);
+  font-weight:800;color:var(--indigo);letter-spacing:-0.3px;}
+.sec-link{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:700;
+  color:var(--violet);text-decoration:none;display:flex;align-items:center;gap:6px;
+  transition:gap 0.2s;white-space:nowrap;}
+.sec-link:hover{gap:11px;}
+.cats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;}
+.cat-card{border-radius:16px;overflow:hidden;cursor:pointer;position:relative;transition:all 0.3s;}
+.cat-card:hover{transform:translateY(-6px);box-shadow:var(--shadow);}
+.cat-img{aspect-ratio:4/3;overflow:hidden;}
+.cat-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.75) saturate(0.9);transition:all 0.5s;}
+.cat-card:hover .cat-img img{transform:scale(1.06);filter:brightness(0.9) saturate(1);}
+.cat-overlay{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:24px;}
+.co-gradient{position:absolute;inset:0;opacity:0.85;}
+.cc-digital .co-gradient{background:linear-gradient(to top,var(--indigo),rgba(30,21,96,0.3) 60%,transparent);}
+.cc-pet .co-gradient{background:linear-gradient(to top,var(--teal),rgba(15,168,138,0.3) 60%,transparent);}
+.cc-tools .co-gradient{background:linear-gradient(to top,#7c3a00,rgba(124,58,0,0.3) 60%,transparent);}
+.co-content{position:relative;z-index:1;}
+.co-icon{font-size:28px;display:block;margin-bottom:8px;}
+.co-name{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:white;margin-bottom:4px;}
+.co-desc{font-size:12px;font-weight:500;color:rgba(255,255,255,0.7);}
+.co-arr{margin-top:12px;font-size:16px;color:var(--gold);}
+
+/* PRODUCTS */
+.products{padding:80px 56px;background:var(--sky);position:relative;z-index:1;}
+.prods-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:44px;}
+.prod-card{background:var(--white-pure);border-radius:14px;overflow:hidden;cursor:pointer;
+  border:1px solid var(--border);transition:all 0.3s;position:relative;}
+.prod-card:hover{transform:translateY(-5px);box-shadow:var(--shadow);border-color:var(--violet);}
+.pc-img{aspect-ratio:1/1;overflow:hidden;background:#eef0f8;position:relative;}
+.pc-img img{width:100%;height:100%;object-fit:cover;filter:brightness(0.93);transition:all 0.5s;}
+.prod-card:hover .pc-img img{transform:scale(1.06);filter:brightness(1);}
+.pc-badge{position:absolute;top:10px;left:10px;border-radius:6px;
+  padding:3px 10px;font-size:9.5px;font-weight:700;z-index:2;}
+.pc-badge.digital{background:var(--violet);color:white;}
+.pc-badge.pet{background:var(--teal);color:white;}
+.pc-badge.tools{background:var(--coral);color:white;}
+.pc-badge.art{background:var(--gold);color:var(--indigo);}
+.pc-badge.eid{background:linear-gradient(135deg,#2e8b57,#f0a500);color:white;}
+.pc-wish{position:absolute;top:10px;right:10px;width:30px;height:30px;border-radius:50%;
+  background:rgba(248,249,255,0.9);border:none;font-size:14px;cursor:pointer;
+  display:flex;align-items:center;justify-content:center;transition:all 0.2s;
+  opacity:0;z-index:2;}
+.prod-card:hover .pc-wish{opacity:1;}
+.pc-wish:hover{background:var(--violet);color:white;transform:scale(1.1);}
+.pc-body{padding:14px 16px 18px;}
+.pc-cat{font-size:9.5px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--light);margin-bottom:6px;}
+.pc-name{font-family:'Syne',sans-serif;font-size:13.5px;font-weight:700;color:var(--indigo);
+  line-height:1.4;margin-bottom:10px;
+  display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+.pc-price{font-family:'Syne',sans-serif;font-size:18px;font-weight:800;color:var(--violet);}
+.pc-atc{width:100%;margin-top:10px;background:var(--indigo-pale);color:var(--indigo);
+  border:1px solid rgba(30,21,96,0.15);border-radius:7px;padding:9px;
+  font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:700;cursor:pointer;transition:all 0.2s;}
+.pc-atc:hover{background:var(--violet);color:white;border-color:var(--violet);}
+
+/* DIGITAL HIGHLIGHT */
+.digital-feature{padding:80px 56px;background:var(--white-pure);position:relative;z-index:1;overflow:hidden;}
+.digital-feature::before{content:'⬡';position:absolute;right:-30px;top:-30px;
+  font-size:280px;color:rgba(124,58,237,0.04);pointer-events:none;}
+.df-inner{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;}
+.df-left{}
+.df-eyebrow{font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--violet);margin-bottom:14px;
+  display:flex;align-items:center;gap:10px;}
+.df-eyebrow::after{content:'';flex:0 0 20px;height:2px;background:var(--violet);}
+.df-title{font-family:'Syne',sans-serif;font-size:clamp(28px,3.5vw,46px);
+  font-weight:800;color:var(--indigo);line-height:1.1;margin-bottom:16px;letter-spacing:-0.3px;}
+.df-title span{color:var(--violet);}
+.df-desc{font-size:15px;font-weight:300;line-height:1.85;color:var(--mid);margin-bottom:28px;max-width:420px;}
+.df-items{display:flex;flex-direction:column;gap:14px;margin-bottom:32px;}
+.df-item{display:flex;align-items:center;gap:14px;padding:14px 18px;
+  background:var(--sky);border:1px solid var(--border);border-radius:10px;transition:all 0.2s;}
+.df-item:hover{border-color:var(--violet);background:var(--violet-pale);}
+.dfi-icon{font-size:24px;flex-shrink:0;}
+.dfi-name{font-family:'Syne',sans-serif;font-size:13.5px;font-weight:700;color:var(--indigo);margin-bottom:2px;}
+.dfi-price{font-size:13px;font-weight:700;color:var(--violet);}
+.df-right{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+.df-img{border-radius:12px;overflow:hidden;box-shadow:var(--shadow-sm);}
+.df-img img{width:100%;aspect-ratio:1/1;object-fit:cover;filter:brightness(0.9);transition:all 0.4s;}
+.df-img:hover img{transform:scale(1.05);filter:brightness(1);}
+
+/* NEWSLETTER */
+.newsletter{padding:80px 56px;background:linear-gradient(135deg,var(--indigo) 0%,#2a1a80 100%);
+  text-align:center;position:relative;overflow:hidden;z-index:1;}
+.newsletter::before{content:'';position:absolute;inset:0;pointer-events:none;
+  background-image:radial-gradient(circle,rgba(255,255,255,0.5) 1px,transparent 1px);
+  background-size:30px 30px;opacity:0.06;}
+.nl-inner{max-width:520px;margin:0 auto;position:relative;z-index:1;}
+.nl-eyebrow{font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:var(--gold-lt);margin-bottom:14px;display:block;}
+.nl-title{font-family:'Syne',sans-serif;font-size:clamp(30px,4.5vw,50px);
+  font-weight:800;color:white;margin-bottom:12px;line-height:1.05;letter-spacing:-0.3px;}
+.nl-title span{color:var(--gold);}
+.nl-sub{font-size:14px;font-weight:300;color:rgba(255,255,255,0.55);margin-bottom:32px;line-height:1.8;}
+.nl-form{display:flex;gap:0;max-width:440px;margin:0 auto 12px;}
+.nl-input{flex:1;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);
+  border-right:none;border-radius:8px 0 0 8px;padding:14px 18px;
+  font-family:'DM Sans',sans-serif;font-size:14px;color:white;outline:none;transition:border-color 0.2s;}
+.nl-input:focus{border-color:var(--gold);}
+.nl-input::placeholder{color:rgba(255,255,255,0.4);}
+.nl-btn{background:var(--gold);color:var(--indigo);border:none;border-radius:0 8px 8px 0;padding:14px 22px;
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:800;cursor:pointer;white-space:nowrap;transition:all 0.2s;}
+.nl-btn:hover{background:var(--gold-lt);}
+.nl-note{font-size:11px;color:rgba(255,255,255,0.3);}
+
+/* FOOTER */
+footer{background:var(--indigo);border-top:1px solid rgba(255,255,255,0.08);padding:64px 56px 28px;position:relative;z-index:1;}
+.ft-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:52px;margin-bottom:52px;}
+.ft-logo{font-family:'Syne',sans-serif;font-size:22px;font-weight:800;color:white;margin-bottom:8px;}
+.ft-logo span{color:var(--violet-lt);}
+.ft-tagline{font-family:'Syne',sans-serif;font-size:9.5px;font-weight:600;letter-spacing:2.5px;
+  text-transform:uppercase;color:var(--gold);margin-bottom:14px;display:block;}
+.ft-desc{font-size:12.5px;color:rgba(255,255,255,0.4);line-height:1.8;max-width:240px;margin-bottom:18px;font-weight:300;}
+.ft-flags{display:flex;gap:8px;flex-wrap:wrap;}
+.ft-flag{font-size:20px;cursor:pointer;transition:transform 0.2s;}
+.ft-flag:hover{transform:scale(1.2);}
+.ft-hd{font-family:'Syne',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:3px;
+  text-transform:uppercase;color:rgba(255,255,255,0.3);margin-bottom:18px;}
+.ft-links{list-style:none;display:flex;flex-direction:column;gap:10px;}
+.ft-links a{font-size:13px;color:rgba(255,255,255,0.5);text-decoration:none;font-weight:400;transition:color 0.2s;}
+.ft-links a:hover{color:var(--gold-lt);}
+.ft-bot{border-top:1px solid rgba(255,255,255,0.08);padding-top:24px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;}
+.ft-copy{font-family:'DM Sans',sans-serif;font-size:11px;color:rgba(255,255,255,0.3);}
+
+/* MOBILE MENU */
+.mobile-menu{display:none;position:fixed;inset:0;background:var(--white);z-index:200;
+  flex-direction:column;padding:26px;overflow-y:auto;}
+.mobile-menu.open{display:flex;}
+.mm-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:48px;}
+.mm-logo{font-family:'Syne',sans-serif;font-size:20px;font-weight:800;color:var(--indigo);}
+.mm-logo span{color:var(--violet);}
+.mm-close{width:36px;height:36px;border-radius:8px;background:var(--indigo-pale);
+  border:1px solid var(--border-md);color:var(--indigo);font-size:15px;
+  cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;}
+.mm-links{display:flex;flex-direction:column;flex:1;}
+.mm-links a{font-family:'Syne',sans-serif;font-size:28px;font-weight:800;
+  color:var(--indigo);text-decoration:none;padding:12px 0;
+  border-bottom:1px solid var(--border);transition:color 0.15s;}
+.mm-links a:hover{color:var(--violet);}
+.mm-links a:last-child{border-bottom:none;}
+.mm-btns{margin-top:28px;display:flex;flex-direction:column;gap:10px;}
+.mm-shop{background:var(--violet);color:white;border:none;border-radius:8px;padding:15px;
+  font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;}
+.mm-contact{background:var(--gold-pale);color:var(--gold);border:1px solid rgba(240,165,0,0.25);
+  border-radius:8px;padding:13px;font-family:'Syne',sans-serif;font-size:12px;font-weight:700;cursor:pointer;}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(20px);transition:opacity 0.8s ease,transform 0.8s ease;}
+.reveal.in{opacity:1;transform:translateY(0);}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}
+.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+.reveal.d5{transition-delay:.5s}.reveal.d6{transition-delay:.6s}
+.reveal.d7{transition-delay:.7s}.reveal.d8{transition-delay:.8s}
+
+/* TABLET */
+@media(max-width:1024px){
+  nav{padding:0 24px;}.nav-links{display:none;}.hamburger{display:flex;}.nav-badge{display:none;}
+  .hero{grid-template-columns:1fr;}.hero-left{padding:60px 28px;min-height:auto;}
+  .hero-right{padding:20px 28px 48px;grid-template-columns:1fr 1fr 1fr;grid-auto-rows:auto;}
+  .trust{padding:0 28px;}.trust-inner{grid-template-columns:1fr 1fr;}
+  .ti:nth-child(2){border-right:none;}.ti:nth-child(3){border-right:1px solid var(--border);}
+  .categories{padding:64px 28px;}.sec-hd{flex-direction:column;align-items:flex-start;gap:14px;}
+  .cats-grid{grid-template-columns:1fr 1fr;}
+  .products{padding:64px 28px;}.prods-grid{grid-template-columns:1fr 1fr;}
+  .digital-feature{padding:64px 28px;}.df-inner{grid-template-columns:1fr;gap:40px;}
+  .newsletter{padding:64px 28px;}
+  footer{padding:56px 28px 24px;}.ft-top{grid-template-columns:1fr 1fr;gap:36px;}
+}
+@media(max-width:768px){
+  nav{padding:0 20px;height:62px;}
+  .hero-left{padding:44px 20px;}.hero-h1{font-size:clamp(36px,10vw,56px);}
+  .hero-btns{flex-direction:column;}.btn-gold,.btn-ghost-white{width:100%;justify-content:center;}
+  .hero-right{padding:0 20px 44px;grid-template-columns:1fr 1fr;gap:8px;}
+  .trust{padding:0 20px;}.trust-inner{grid-template-columns:1fr 1fr;}
+  .ti{padding:14px;border-right:none;border-bottom:1px solid var(--border);}
+  .ti:nth-child(odd){border-right:1px solid var(--border);}
+  .categories{padding:52px 20px;}.cats-grid{grid-template-columns:1fr;}
+  .products{padding:52px 20px;}.prods-grid{grid-template-columns:1fr 1fr;gap:10px;}
+  .digital-feature{padding:52px 20px;}
+  .newsletter{padding:56px 20px;}.nl-form{flex-direction:column;}
+  .nl-input{border-right:1px solid rgba(255,255,255,0.2);border-radius:8px 8px 0 0;border-bottom:none;}
+  .nl-btn{border-radius:0 0 8px 8px;width:100%;}
+  footer{padding:48px 20px 22px;}.ft-top{grid-template-columns:1fr 1fr;gap:24px;}
+  .ft-bot{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:480px){
+  .hero-h1{font-size:34px;}.cats-grid{grid-template-columns:1fr;}.ft-top{grid-template-columns:1fr;}
+  .trust-inner{grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<!-- Announce -->
+<div class="announce">
+  <div class="announce-track" id="at">
+    <span class="at-item"><strong>Digital downloads</strong> — instant delivery ⚡</span><span class="at-sep"> · </span>
+    <span class="at-item">Eid stickers, Mandala PDFs &amp; KDP templates 🎨</span><span class="at-sep"> · </span>
+    <span class="at-item">Ships worldwide 🌍 — 25+ countries</span><span class="at-sep"> · </span>
+    <span class="at-item"><strong>Digital downloads</strong> — instant delivery ⚡</span><span class="at-sep"> · </span>
+    <span class="at-item">Eid stickers, Mandala PDFs &amp; KDP templates 🎨</span><span class="at-sep"> · </span>
+    <span class="at-item">Ships worldwide 🌍 — 25+ countries</span><span class="at-sep"> · </span>
+  </div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-main">Dadda<span>products</span></div>
+    <div class="nav-logo-sub">Digital · Pet · Tools</div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Catalog</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-badge">🌍 25+ Countries</div>
+    <button class="nav-cta">Shop All →</button>
+    <button class="hamburger" onclick="openMenu()"><span></span><span></span><span></span></button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mm">
+  <div class="mm-top">
+    <div class="mm-logo">Dadda<span>products</span></div>
+    <button class="mm-close" onclick="closeMenu()">✕</button>
+  </div>
+  <nav class="mm-links">
+    <a href="#" onclick="closeMenu()">Home</a>
+    <a href="#" onclick="closeMenu()">All Products</a>
+    <a href="#" onclick="closeMenu()">Contact</a>
+  </nav>
+  <div class="mm-btns">
+    <button class="mm-shop" onclick="closeMenu()">Browse All 13 Products →</button>
+    <button class="mm-contact" onclick="closeMenu()">Contact Us</button>
+  </div>
+</div>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="hero-stars"></div>
+  <div class="hero-glow1"></div>
+  <div class="hero-glow2"></div>
+  <div class="hero-left">
+    <div class="hero-eyebrow"><span class="he-dot"></span><span class="he-text">Welcome to Dadda Store</span></div>
+    <h1 class="hero-h1">
+      <span class="block">Digital, Pet &</span>
+      <span class="block">Everything <span class="gold">You Need.</span></span>
+    </h1>
+    <p class="hero-sub">Instant digital downloads, pet essentials, tools and creative resources — all in one store. From Eid stickers to KDP templates, we've got something for everyone.</p>
+    <div class="hero-pills">
+      <div class="hero-pill">⚡ Digital Downloads</div>
+      <div class="hero-pill">🐾 Pet Products</div>
+      <div class="hero-pill">🔧 Tools & Gadgets</div>
+      <div class="hero-pill">🎨 Creative Assets</div>
+    </div>
+    <div class="hero-btns">
+      <button class="btn-gold">🛍️ Shop All Products →</button>
+      <button class="btn-ghost-white">Browse Catalog</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hs"><div class="hs-val">13</div><div class="hs-label">Products</div></div>
+      <div class="hs"><div class="hs-val">$0.99</div><div class="hs-label">Starting From</div></div>
+      <div class="hs"><div class="hs-val">25+</div><div class="hs-label">Countries</div></div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-prod" style="position:relative;">
+      <div class="dig-badge">DIGITAL</div>
+      <div class="hero-prod-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/100-Editable-Templates-KDP-2026-Graphics-109253720-580x387.jpg&w=400&output=jpg" alt="KDP Templates"></div>
+      <div class="hero-prod-body"><div class="hpb-name">100 KDP Editable Templates</div><div class="hpb-price">$10.00</div></div>
+    </div>
+    <div class="hero-prod" style="position:relative;">
+      <div class="dig-badge">PDF</div>
+      <div class="hero-prod-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/FullSizeRender.jpg&w=400&output=jpg" alt="Mandala Pages"></div>
+      <div class="hero-prod-body"><div class="hpb-name">7 Mandala Coloring Pages</div><div class="hpb-price">$0.99</div></div>
+    </div>
+    <div class="hero-prod">
+      <div class="hero-prod-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/da0b84a0-7a75-47ef-98a7-0e9ceba44e36.jpg&w=400&output=jpg" alt="Pet Bathrobe"></div>
+      <div class="hero-prod-body"><div class="hpb-name">Pet Microfiber Bathrobe</div><div class="hpb-price">$60.00</div></div>
+    </div>
+    <div class="hero-prod" style="position:relative;">
+      <div class="dig-badge">DIGITAL</div>
+      <div class="hero-prod-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/image_2c0dad83-d42d-4e66-9217-0ce51098aa5b.png&w=400&output=jpg" alt="Eid Stickers"></div>
+      <div class="hero-prod-body"><div class="hpb-name">Eid Al-Fitr Printable Stickers</div><div class="hpb-price">$2.99</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- Marquee -->
+<div class="marquee">
+  <div class="marquee-track" id="mq">
+    <span class="mi"><span class="ms">◆</span>Digital Downloads</span>
+    <span class="mi"><span class="ms">◆</span>Instant Delivery</span>
+    <span class="mi"><span class="ms">◆</span>Pet Products</span>
+    <span class="mi"><span class="ms">◆</span>KDP Templates</span>
+    <span class="mi"><span class="ms">◆</span>Mandala PDFs</span>
+    <span class="mi"><span class="ms">◆</span>Eid Stickers</span>
+    <span class="mi"><span class="ms">◆</span>25+ Countries</span>
+    <span class="mi"><span class="ms">◆</span>Tools & Gadgets</span>
+    <span class="mi"><span class="ms">◆</span>Digital Downloads</span>
+    <span class="mi"><span class="ms">◆</span>Instant Delivery</span>
+    <span class="mi"><span class="ms">◆</span>Pet Products</span>
+    <span class="mi"><span class="ms">◆</span>KDP Templates</span>
+    <span class="mi"><span class="ms">◆</span>Mandala PDFs</span>
+    <span class="mi"><span class="ms">◆</span>Eid Stickers</span>
+    <span class="mi"><span class="ms">◆</span>25+ Countries</span>
+    <span class="mi"><span class="ms">◆</span>Tools & Gadgets</span>
+  </div>
+</div>
+
+<!-- Trust -->
+<div class="trust">
+  <div class="trust-inner">
+    <div class="ti"><span class="ti-icon">⚡</span><div><div class="ti-title">Instant Digital Delivery</div><div class="ti-desc">Downloads available immediately</div></div></div>
+    <div class="ti"><span class="ti-icon">🌍</span><div><div class="ti-title">Ships Worldwide</div><div class="ti-desc">25+ countries supported</div></div></div>
+    <div class="ti"><span class="ti-icon">🎨</span><div><div class="ti-title">Creative & Useful</div><div class="ti-desc">Eclectic, curated selection</div></div></div>
+    <div class="ti"><span class="ti-icon">🔒</span><div><div class="ti-title">Secure Checkout</div><div class="ti-desc">Safe and encrypted payments</div></div></div>
+  </div>
+</div>
+
+<!-- Categories -->
+<section class="categories">
+  <div class="sec-hd reveal">
+    <div>
+      <div class="sec-eyebrow">Browse</div>
+      <h2 class="sec-title">Shop by Category</h2>
+    </div>
+    <a href="#" class="sec-link">View all 13 →</a>
+  </div>
+  <div class="cats-grid">
+    <div class="cat-card cc-digital reveal d1">
+      <div class="cat-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/100-Editable-Templates-KDP-2026-Graphics-109253720-580x387.jpg&w=600&output=jpg" alt="Digital Downloads"></div>
+      <div class="cat-overlay">
+        <div class="co-gradient"></div>
+        <div class="co-content">
+          <span class="co-icon">⚡</span>
+          <div class="co-name">Digital Downloads</div>
+          <div class="co-desc">KDP templates, Mandala PDFs, Stickers, Art</div>
+          <div class="co-arr">→</div>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card cc-pet reveal d2">
+      <div class="cat-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/da0b84a0-7a75-47ef-98a7-0e9ceba44e36.jpg&w=600&output=jpg" alt="Pet Products"></div>
+      <div class="cat-overlay">
+        <div class="co-gradient"></div>
+        <div class="co-content">
+          <span class="co-icon">🐾</span>
+          <div class="co-name">Pet Products</div>
+          <div class="co-desc">Bathrobes, grooming brushes & accessories</div>
+          <div class="co-arr">→</div>
+        </div>
+      </div>
+    </div>
+    <div class="cat-card cc-tools reveal d3">
+      <div class="cat-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/74e7659c-c381-4668-919a-348c64114d35.jpg&w=600&output=jpg" alt="Tools & Gadgets"></div>
+      <div class="cat-overlay">
+        <div class="co-gradient"></div>
+        <div class="co-content">
+          <span class="co-icon">🔧</span>
+          <div class="co-name">Tools & Gadgets</div>
+          <div class="co-desc">Digital measuring instruments & more</div>
+          <div class="co-arr">→</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Products Grid -->
+<section class="products">
+  <div class="sec-hd reveal">
+    <div>
+      <div class="sec-eyebrow">All Products</div>
+      <h2 class="sec-title">Browse the Store</h2>
+    </div>
+    <a href="#" class="sec-link">View all →</a>
+  </div>
+  <div class="prods-grid">
+
+    <div class="prod-card reveal d1">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/100-Editable-Templates-KDP-2026-Graphics-109253720-580x387.jpg&w=600&output=jpg" alt="KDP Templates">
+        <div class="pc-badge digital">Digital</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Digital · Templates</div>
+        <div class="pc-name">100 Editable KDP Templates 2026 Graphics</div>
+        <div class="pc-price">$10.00</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d2">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/FullSizeRender.jpg&w=600&output=jpg" alt="Mandala Pages">
+        <div class="pc-badge art">PDF</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Digital · Art</div>
+        <div class="pc-name">7 Mandala Coloring Pages — PDF Print</div>
+        <div class="pc-price">$0.99</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d3">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/da0b84a0-7a75-47ef-98a7-0e9ceba44e36.jpg&w=600&output=jpg" alt="Pet Bathrobe">
+        <div class="pc-badge pet">Pet</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Pet Products</div>
+        <div class="pc-name">Absorbent Pet Bathrobe — Waist-Wrapped Microfiber</div>
+        <div class="pc-price">$60.00</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d4">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/f1896b05-77df-4a2d-83ff-63212120a460.jpg&w=600&output=jpg" alt="Hair Remover Brush">
+        <div class="pc-badge pet">Pet</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Pet · Grooming</div>
+        <div class="pc-name">Animal Hair Remover Brush — Dog & Cat 🐶🐹</div>
+        <div class="pc-price">$17.00</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d5">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/74e7659c-c381-4668-919a-348c64114d35.jpg&w=600&output=jpg" alt="Electronic Ruler">
+        <div class="pc-badge tools">Tools</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Tools & Gadgets</div>
+        <div class="pc-name">Distance Measuring Instrument — Electronic Digital Ruler</div>
+        <div class="pc-price">$15.00</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d6">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/image_2c0dad83-d42d-4e66-9217-0ce51098aa5b.png&w=600&output=jpg" alt="Eid Stickers">
+        <div class="pc-badge eid">Instant</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Digital · Seasonal</div>
+        <div class="pc-name">Eid Al-Fitr Printable Stickers — Instant Download</div>
+        <div class="pc-price">$2.99</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d7">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/CATS.jpg&w=600&output=jpg" alt="Cat Art Stickers">
+        <div class="pc-badge art">Art</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Digital · Art</div>
+        <div class="pc-name">Cute Cat Arts Stickers and Images</div>
+        <div class="pc-price">$3.00</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+    <div class="prod-card reveal d8">
+      <div class="pc-img">
+        <img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/baby-birth-stats-photo-frame-laser-cut-Graphics-96452490-1-1-580x386.jpg&w=600&output=jpg" alt="Baby Photo Frame">
+        <div class="pc-badge digital">Digital</div>
+        <button class="pc-wish">♡</button>
+      </div>
+      <div class="pc-body">
+        <div class="pc-cat">Digital · Templates</div>
+        <div class="pc-name">Baby Birth Stats Photo Frame — Laser Cut Graphics</div>
+        <div class="pc-price">$1.00</div>
+        <button class="pc-atc">Add to Cart</button>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Digital Downloads Feature -->
+<section class="digital-feature">
+  <div class="df-inner">
+    <div class="df-left reveal">
+      <div class="df-eyebrow">Instant Access</div>
+      <h2 class="df-title">Digital Downloads — <span>No Wait.</span></h2>
+      <p class="df-desc">Browse our growing collection of printable PDFs, creative templates, and digital art — download instantly after purchase and use immediately.</p>
+      <div class="df-items">
+        <div class="df-item">
+          <span class="dfi-icon">📋</span>
+          <div><div class="dfi-name">100 KDP Editable Templates</div><div class="dfi-price">$10.00 — Full bundle</div></div>
+        </div>
+        <div class="df-item">
+          <span class="dfi-icon">🌀</span>
+          <div><div class="dfi-name">7 Mandala Coloring Pages PDF</div><div class="dfi-price">$0.99 — Instant download</div></div>
+        </div>
+        <div class="df-item">
+          <span class="dfi-icon">🌙</span>
+          <div><div class="dfi-name">Eid Al-Fitr Printable Stickers</div><div class="dfi-price">$2.99 — Print at home</div></div>
+        </div>
+        <div class="df-item">
+          <span class="dfi-icon">🐱</span>
+          <div><div class="dfi-name">Cute Cat Art Stickers & Images</div><div class="dfi-price">$3.00 — Digital set</div></div>
+        </div>
+      </div>
+      <button style="background:var(--violet);color:white;border:none;border-radius:8px;padding:13px 28px;font-family:'Syne',sans-serif;font-size:13px;font-weight:700;cursor:pointer;transition:all 0.2s;">⚡ Browse All Digital Downloads →</button>
+    </div>
+    <div class="df-right reveal d2">
+      <div class="df-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/IMG-8503.png&w=400&output=jpg" alt="Mandala Preview"></div>
+      <div class="df-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/NightShift_Studio_Cute_Cat_Art_SET1_Image5.png&w=400&output=jpg" alt="Cat Art"></div>
+      <div class="df-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/image_58c55548-1332-4001-a8af-6919c898fec0.png&w=400&output=jpg" alt="Eid Stickers"></div>
+      <div class="df-img"><img src="https://wsrv.nl/?url=daddaprodcuts.myshopify.com/cdn/shop/files/100-Editable-Templates-KDP-2026-Graphics-109253720-4-580x387.jpg&w=400&output=jpg" alt="KDP Preview"></div>
+    </div>
+  </div>
+</section>
+
+<!-- Newsletter -->
+<section class="newsletter">
+  <div class="nl-inner reveal">
+    <span class="nl-eyebrow">Join the Store</span>
+    <h2 class="nl-title">Exclusive deals.<br><span>Early access.</span></h2>
+    <p class="nl-sub">New products, digital downloads and exclusive discounts — straight to your inbox. Be the first to know about new arrivals.</p>
+    <div class="nl-form">
+      <input type="email" class="nl-input" placeholder="your@email.com">
+      <button class="nl-btn">Subscribe →</button>
+    </div>
+    <div class="nl-note">No spam. Unsubscribe anytime.</div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="ft-top">
+    <div>
+      <div class="ft-logo">Dadda<span>products</span></div>
+      <span class="ft-tagline">Digital · Pet · Tools · Creative</span>
+      <p class="ft-desc">An eclectic store offering instant digital downloads, pet essentials, creative assets and practical tools — shipped worldwide.</p>
+      <div class="ft-flags">
+        <span class="ft-flag" title="United States">🇺🇸</span>
+        <span class="ft-flag" title="United Arab Emirates">🇦🇪</span>
+        <span class="ft-flag" title="United Kingdom">🇬🇧</span>
+        <span class="ft-flag" title="Canada">🇨🇦</span>
+        <span class="ft-flag" title="Germany">🇩🇪</span>
+        <span class="ft-flag" title="France">🇫🇷</span>
+        <span class="ft-flag" title="Qatar">🇶🇦</span>
+        <span class="ft-flag">+18 more</span>
+      </div>
+    </div>
+    <div>
+      <div class="ft-hd">Shop</div>
+      <ul class="ft-links">
+        <li><a href="#">All Products</a></li>
+        <li><a href="#">Digital Downloads</a></li>
+        <li><a href="#">Pet Products</a></li>
+        <li><a href="#">Tools & Gadgets</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="ft-hd">Info</div>
+      <ul class="ft-links">
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Privacy Policy</a></li>
+        <li><a href="#">Contact Information</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="ft-bot">
+    <div class="ft-copy">© 2026 Daddaproducts. All rights reserved. Powered by Shopify.</div>
+    <div class="ft-copy">🌍 Shipping to 25+ countries worldwide</div>
+  </div>
+</footer>
+
+<script>
+const obs=new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');}),{threshold:0.07});
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+// announce + marquee dupe
+const at=document.getElementById('at');at.innerHTML+=at.innerHTML;
+const mq=document.getElementById('mq');mq.innerHTML+=mq.innerHTML;
+// wishlist
+document.querySelectorAll('.pc-wish').forEach(b=>{
+  b.addEventListener('click',e=>{e.stopPropagation();
+    b.textContent=b.textContent==='♡'?'♥':'♡';
+    b.style.background=b.textContent==='♥'?'var(--violet)':'';
+    b.style.color=b.textContent==='♥'?'white':'';});
+});
+// atc
+document.querySelectorAll('.pc-atc').forEach(b=>{
+  b.addEventListener('click',()=>{const o=b.textContent;
+    b.textContent='✓ Added!';b.style.background='var(--teal)';b.style.color='white';b.style.borderColor='var(--teal)';
+    setTimeout(()=>{b.textContent=o;b.style.background='';b.style.color='';b.style.borderColor='';},1800);});
+});
+function openMenu(){document.getElementById('mm').classList.add('open');document.body.style.overflow='hidden';}
+function closeMenu(){document.getElementById('mm').classList.remove('open');document.body.style.overflow='';}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+</script>
+</body>
+</html>
